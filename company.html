@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社概要 - 合同会社Grit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #0056b3; /* Darker blue for corporate feel */
+            --secondary-color: #f8f9fa; /* Light gray for backgrounds */
+            --text-color: #343a40; /* Dark gray for text */
+            --header-bg-color: #ffffff;
+            --footer-bg-color: #343a40;
+            --link-color: #007bff;
+            --hover-color: #0056b3;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--header-bg-color);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .company-info table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        .company-info th, .company-info td {
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .company-info th {
+            background-color: #e9ecef;
+            width: 30%;
+        }
+
+        footer {
+            background-color: var(--footer-bg-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">合同会社Grit</a>
+                <ul>
+                    <li><a href="company.html">会社概要</a></li>
+                    <li><a href="properties.html">保有物件一覧</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="company-profile">
+        <div class="container">
+            <h2 class="section-title">会社概要</h2>
+            <div class="company-info">
+                <table>
+                    <tr>
+                        <th>会社名</th>
+                        <td>合同会社Grit</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>東京都〇〇区〇〇</td>
+                    </tr>
+                    <tr>
+                        <th>設立</th>
+                        <td>20XX年X月</td>
+                    </tr>
+                    <tr>
+                        <th>資本金</th>
+                        <td>〇〇円</td>
+                    </tr>
+                    <tr>
+                        <th>事業内容</th>
+                        <td>不動産の賃貸、管理、売買、仲介</td>
+                    </tr>
+                    <tr>
+                        <th>代表者</th>
+                        <td>田中 允丈</td>
+                    </tr>
+                </table>
+            </div>
+            <h3>代表者メッセージ</h3>
+            <p>この度は、合同会社Gritのウェブサイトをご覧いただき、誠にありがとうございます。私たちは、不動産を通じてお客様の豊かな未来を創造することを使命としております。変化の激しい時代において、不動産は単なる資産ではなく、人々の生活やビジネスを支える重要な基盤であると認識しております。お客様一人ひとりのニーズに真摯に向き合い、最適なソリューションを提供できるよう、社員一同、日々研鑽を積んでまいります。今後とも変わらぬご支援、ご鞭撻を賜りますようお願い申し上げます。</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 合同会社Grit. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

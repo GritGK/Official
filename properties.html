@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保有物件一覧 - 合同会社Grit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #0056b3; /* Darker blue for corporate feel */
+            --secondary-color: #f8f9fa; /* Light gray for backgrounds */
+            --text-color: #343a40; /* Dark gray for text */
+            --header-bg-color: #ffffff;
+            --footer-bg-color: #343a40;
+            --link-color: #007bff;
+            --hover-color: #0056b3;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--header-bg-color);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .property-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .property-card-content {
+            padding: 20px;
+        }
+
+        .property-card-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .property-card-content p {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        footer {
+            background-color: var(--footer-bg-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">合同会社Grit</a>
+                <ul>
+                    <li><a href="company.html">会社概要</a></li>
+                    <li><a href="properties.html">保有物件一覧</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="properties-list">
+        <div class="container">
+            <h2 class="section-title">保有物件一覧</h2>
+            <div class="property-grid">
+                <a href="https://gritgk.github.io/GrandCoffret-Kichijoji/" target="_blank" class="property-card">
+                    <img src="https://via.placeholder.com/400x200?text=Grand+Coffret+Kichijoji" alt="Grand Coffret Kichijoji">
+                    <div class="property-card-content">
+                        <h3>グランコフレ吉祥寺</h3>
+                        <p>吉祥寺の閑静な住宅街に佇む、上質な暮らしを叶えるレジデンス。</p>
+                    </div>
+                </a>
+                <a href="https://gritgk.github.io/Coffret-Kichijoji/" target="_blank" class="property-card">
+                    <img src="https://via.placeholder.com/400x200?text=Coffret+Kichijoji" alt="Coffret Kichijoji">
+                    <div class="property-card-content">
+                        <h3>コフレ吉祥寺本町</h3>
+                        <p>吉祥寺に息づく、洗練された都市生活の新たな拠点。</p>
+                    </div>
+                </a>
+                <a href="https://gritgk.github.io/Coffret-Takadanobaba/" target="_blank" class="property-card">
+                    <img src="https://via.placeholder.com/400x200?text=Coffret+Takadanobaba" alt="Coffret Takadanobaba">
+                    <div class="property-card-content">
+                        <h3>コフレ高田馬場</h3>
+                        <p>知性と活気が交差する街、高田馬場で、新しい都市生活を。</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 合同会社Grit. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
