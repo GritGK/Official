@@ -171,10 +171,10 @@
             <div class="contact-info">
                 <p>ご質問やご相談などございましたら、お気軽にお問い合わせください。</p>
                 <p>Email: ezypt1986@gmail.com</p>
-                <p>電話番号: 00-0000-0000</p>
+                
             </div>
             <div class="contact-form">
-                <form action="#" method="POST">
+                <form id="contactForm" action="mailto:ezypt1986@gmail.com" method="get" enctype="text/plain">
                     <label for="name">お名前</label>
                     <input type="text" id="name" name="name" required>
 
@@ -193,10 +193,10 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 合同会社Grit. All Rights Reserved.</p>
-        </div>
-    </footer>
-</body>
+    <footer>        <div class="container">            <p>&copy; 2024 合同会社Grit. All Rights Reserved.</p>        </div>    </footer>    <script>        document.getElementById('contactForm').addEventListener('submit', function(event) {            const name = document.getElementById('name').value;            const email = document.getElementById('email').value;            const subject = document.getElementById('subject').value;            const message = document.getElementById('message').value;            const mailtoLink = this.action;            const body = `お名前: ${name}
+メールアドレス: ${email}
+件名: ${subject}
+
+お問い合わせ内容:
+${message}`;                        this.action = `${mailtoLink}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;        });    </script></body>
 </html>

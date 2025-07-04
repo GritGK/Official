@@ -8,43 +8,71 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
 
         :root {
-            --primary-color: #0056b3; /* Darker blue for corporate feel */
-            --secondary-color: #f8f9fa; /* Light gray for backgrounds */
-            --text-color: #343a40; /* Dark gray for text */
+            --primary-color: #007bff; /* Brighter blue */
+            --secondary-color: #f0f2f5; /* Lighter gray for backgrounds */
+            --text-color: #333; /* Darker text for better contrast */
             --header-bg-color: #ffffff;
-            --footer-bg-color: #343a40;
-            --link-color: #007bff;
-            --hover-color: #0056b3;
+            --footer-bg-color: #2c3e50; /* Darker footer */
+            --accent-color: #28a745; /* Green accent for buttons/highlights */
+            --shadow-light: 0 4px 15px rgba(0,0,0,0.08);
+            --shadow-medium: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.8; /* Increased line height for readability */
             color: var(--text-color);
-            background-color: var(--secondary-color);
+            /* Updated background for subtle animation */
+            background: linear-gradient(270deg, #f0f2f5, #e6e9ed);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            scroll-behavior: smooth;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px; /* Slightly more padding */
         }
 
         header {
             background-color: var(--header-bg-color);
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1.2rem 0;
+            box-shadow: var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header .logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.8rem; /* Match properties.html */
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
+            transition: color 0.3s ease;
+            letter-spacing: normal; /* Reset letter spacing */
         }
+
+        header .logo:hover {
+            color: var(--hover-color);
+        }
+
+        /* .logo-grit class removed as it's no longer needed */
 
         nav {
             display: flex;
@@ -60,97 +88,185 @@
         }
 
         nav ul li {
-            margin-left: 30px;
+            margin-left: 40px; /* More spacing */
         }
 
         nav ul li a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 1.05rem;
+            transition: color 0.3s ease, transform 0.2s ease;
         }
 
         nav ul li a:hover {
             color: var(--primary-color);
+            transform: translateY(-2px);
         }
 
         .hero {
-            background: url('https://via.placeholder.com/1500x600?text=Company+Hero+Image') no-repeat center center/cover;
+            /* Updated background with a more dynamic gradient overlay */
+            background: linear-gradient(to right, rgba(0, 50, 100, 0.7), rgba(50, 0, 100, 0.7)), url('TOP.jpg') no-repeat center center/cover;
             color: #ffffff;
             text-align: center;
-            padding: 100px 20px;
+            padding: 150px 20px; /* More vertical padding */
             position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 600px; /* Minimum height for hero */
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
+            max-width: 900px;
         }
 
         .hero h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+            font-size: 4.5rem; /* Much larger heading */
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
         }
 
         .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto;
+            font-size: 1.5rem; /* Larger paragraph */
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 50px; /* Pill shape */
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn:hover {
+            background-color: #218838; /* Darker green on hover */
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0; /* More vertical padding for sections */
         }
 
         .section-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
+            font-size: 3.2rem; /* Larger section titles */
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger min-width */
+            gap: 35px; /* More gap */
         }
 
         .card {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background-color: #ffffff; /* Revert to white background */
+            padding: 35px; /* More padding */
+            border-radius: 12px; /* More rounded corners */
+            box-shadow: var(--shadow-light);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Add border-color transition */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: var(--text-color); /* Revert text color */
+            border: 2px solid transparent; /* Initial transparent border */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Remove ::before pseudo-elements for background gradients */
+        .card::before {
+            content: none;
+        }
+
+        /* Add border colors for each card */
+        .card:nth-child(1) {
+            border-color: #007bff; /* Blue border */
+        }
+
+        .card:nth-child(2) {
+            border-color: #28a745; /* Green border */
+        }
+
+        .card:nth-child(3) {
+            border-color: #6f42c1; /* Purple border */
+        }
+
+        .card:hover {
+            transform: translateY(-8px); /* Lift effect on hover */
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-color); /* Example hover border color */
         }
 
         .card h3 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
+            color: var(--primary-color); /* Revert card titles to primary color */
+            font-size: 2rem; /* Larger card titles */
             margin-top: 0;
+            margin-bottom: 15px;
+            text-shadow: none; /* Remove text shadow */
+        }
+
+        .card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            text-shadow: none; /* Remove text shadow */
         }
 
         footer {
             background-color: var(--footer-bg-color);
             color: #ffffff;
             text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
+            padding: 40px 0; /* More padding */
+            margin-top: 80px;
+            font-size: 0.95rem;
         }
 
         footer p {
             margin: 0;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            .hero p {
+                font-size: 1.3rem;
+            }
+            .section-title {
+                font-size: 2.8rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -169,11 +285,48 @@
                 margin: 10px 0;
             }
 
+            .hero {
+                padding: 100px 20px;
+                min-height: 450px;
+            }
+
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .card h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .btn {
+                padding: 12px 25px;
                 font-size: 1rem;
             }
         }
@@ -195,26 +348,28 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>未来を築く、不動産の力。</h1>
-            <p>合同会社Gritは、お客様の未来を豊かにする不動産ソリューションを提供します。確かな実績と信頼で、最適な物件をご提案いたします。</p>
+            <h1>土地の力を育み、まちに息づく住まいを未来へ。</h1>
+            <p>合同会社Gritは、RC造賃貸住宅の開発・運営を通じて、地域社会の活性化と持続可能な住環境の創造に貢献します。</p>
+            <a href="properties.html" class="btn">保有物件を見る</a>
         </div>
     </section>
 
     <section id="about-summary">
         <div class="container">
             <h2 class="section-title">私たちの強み</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto; font-size: 1.1rem;">賃貸住宅は、そこに暮らす住民の方々の日常と地域の風景を形づくる大切な基盤です。私たちは <strong>長期保有</strong> というスタンスを貫き、設計・施工段階から将来のメンテナンスまで責任をもって携わることで、安心・快適・洗練 を兼ね備えた住環境をお届けします。</p>
             <div class="grid">
                 <div class="card">
-                    <h3>豊富な実績</h3>
-                    <p>長年の経験と実績に基づき、お客様のニーズに合わせた最適な不動産をご提案します。</p>
+                    <h3>地域密着マネジメント</h3>
+                    <p>近隣住民に配慮し、街の歴史を深く知ることで、街並みに調和した運営で資産と暮らしの価値をともに高めます。</p>
                 </div>
                 <div class="card">
-                    <h3>専門知識</h3>
-                    <p>不動産に関する深い専門知識を持つプロフェッショナルが、お客様をサポートします。</p>
+                    <h3>速やかな判断と対応力</h3>
+                    <p>入居者の声に即応する小回りの利く運営で、常に快適な住環境を提供します。</p>
                 </div>
                 <div class="card">
-                    <h3>地域密着</h3>
-                    <p>地域に根ざした情報力で、市場の動向を的確に捉え、価値ある物件を提供します。</p>
+                    <h3>RCで守り、洗練で魅せる安心住まい。</h3>
+                    <p>耐震・遮音性能を兼ね備えた打ちっぱなしコンクリート造りのマンションを提供。オートロック・防犯カメラは標準装備。スタイリッシュさと安心を両立します。</p>
                 </div>
             </div>
         </div>
