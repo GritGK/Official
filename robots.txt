@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gritgk.github.io/Official/sitemap.xml
